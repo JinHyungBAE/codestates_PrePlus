@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,700;0,900;1,900&display=swap');
+
+* {margin: 0; padding: 0; box-sizing: border-box; color: #0f1419;}
+a:link, a:hover, a:visited {color: #000; text-decoration: none;}
+ul, li {list-style: none;}
+button, input, textarea {outline: none; border: none; background: none;}
+textarea {resize: none;}
+
+/* header, main, aside {border: 1px dashed orangered;} */
+/* div {border: 1px solid orange;} */
+
+/* FLEXBOX */
+.row {display: flex;}
+.col {display: flex; flex-direction: column;}
+.w-10 {flex: 1 1 auto;}
+.w-30 {flex: 3 1 auto;}
+.flex-end {align-items: flex-end;}
+
+/* PADDING */
+.pl-15 {padding-left: 15px;}
+.pr-15 {padding-right: 15px;}
+.pt-10 {padding-top: 10px;}
+.pb-10 {padding-bottom: 10px;}
+.pl-10 {padding-left: 10px;}
+.pr-10 {padding-right: 10px;}
+
+/* MARGIN */
+.ml-10 {margin-left: 10px;}
+.mr-10 {margin-right: 10px;}
+.mt-10 {margin-top: 10px;}
+.mb-10 {margin-bottom: 10px;}
+
+/* HIDDEN */
+.hidden {visibility: hidden;}
+
+/* STICKY */
+.sticky-top {position: sticky; top: -0.05px;}
+
+/* BACKGROUND-COLOR */
+.bg--light {background-color: #fff;}
+
+/* TEXT COLOR */
+.primary {color: #1da1f2;}
+
+/* BORDER-BOTTOM */
+.bb-1s {border-bottom: 1px solid rgb(235, 238, 240);}
+
+/* HEADER */
+header {
+    left: 0;
+    height: 100vh;
+    max-width: 250px;
+    border-right: 1px solid rgb(235, 238, 240);
+    z-index: 3;
+}
+.icon-logo {font-size: 30px;}
+
+/* MAIN */
+main {
+    max-width: 1152px;
+    background: rgb(247, 249, 250);
+}
+
+/* MAIN COMMON */
+.profile_image {
+    position: relative; 
+    width: 50px; 
+    height: 50px; 
+    background: #bbdefb; 
+    border-radius: 9999px;
+}
+.text-section {flex: 50 1 auto;}
+
+/* MAIN > .main-title */
+.main-title {
+    position: sticky;
+    top: -0.5px;
+    height: 53px;
+    z-index: 2;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px -9px;
+}
+.main-title a {flex: 10 1 auto; cursor: default; text-align: center; font-family: 'Montserrat Alternates', sans-serif; font-style: italic; font-weight: 900;}
+.main-title > button {width: 39px; height: 39px; border-radius: 9999px;}
+.main-title > button:hover {background: #d6edffad;}
+.main-title > button > i {font-size: 21px; cursor: pointer;}
+
+/* MAIN > #newTweetSection */
+.add_icon {
+    position: absolute; 
+    right: 0; 
+    bottom: 0;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+main input, textarea {font-size: 19px; padding: 15px;}
+textarea#newTweetContent {
+    min-height: 5rem;
+    font-family: Arial;
+    overflow-y: hidden;
+}
+
+.btn-register {
+    width: 69px;
+    height: 42px;
+    border-radius: 21px;
+    padding: 0 16px;
+    line-height: 3.3;
+    margin-left: auto;
+    background: #71c8ff;
+    color: #fff;
+    font-weight: 900;
+}
+.btn-register.active {background: #1da1f2; cursor: pointer;}
+.btn-register.active:hover {background: #1e88e5;}
+
+/* MAIN > li.tweet */
+li.tweet {border-top: 1px solid rgb(235, 238, 240);}
+li.tweet:last-child {border-bottom: 1px solid rgb(235, 238, 240);}
+span.username {font-weight: 600;}
+span.time {font-size: 0.75rem; margin-left: 5px; line-height: 2.3; color: #5b7083;}
+
+
+/* ASIDE */
+aside {border-left: 1px solid rgb(235, 238, 240); z-index: 3;}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {display: none;}
