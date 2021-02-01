@@ -14,3 +14,8 @@ v.0.1 -- HTML과 CSS를 이용한 Mock-up 구현 (21.01.31)
 - header와 aside영역 고정 & main영역만 스크롤 기능 적용
 - main 상단의 헤더 고정
 - User name 입력칸에 autofocus 적용
+
+Intro 페이지 추가 (21.02.02)
+
+- button을 클릭하면 welcome 메시지 노출 후 메인 페이지로 이동하는 인트로 페이지 추가
+- 자바스크립트의 setTimeout 메소드를 이용해 일정시간이 지나고 index.html로 location 바뀌도록 적용
