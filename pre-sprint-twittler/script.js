@@ -1,3 +1,4 @@
+// textarea 높이 자동조절
 function resize(obj) {
     obj.style.height = '1px';
     obj.style.height = (12 + obj.scrollHeight) + 'px';

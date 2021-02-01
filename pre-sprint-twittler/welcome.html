@@ -14,14 +14,28 @@
         </script>
     </head>
     <!--  onload="setTimeout('nextWindow()', 3000)" -->
-    <body>
+    <body onload="setTimeout('nextWindow()', 3000)">
         <div class="container row y-center x-center">
-            <div class="row x-center">
-                <button type="button" class="btn-trigger" onclick="window.location = './welcome.html'">
-                    <i class="logo fas fa-feather"></i>
-                </button>
+            <div class="row x-center display--none">
+                <i class="logo fas fa-feather"></i>
                 <i class="logo fas fa-feather shadow"></i>
+            </div>
+            <div class="row x-center">
+                <h1 class="welcome">Welcome to Twittler!</h1>
             </div>
         </div>
     </body>
+        
+    <!-- <body>
+        <header>
+            <i class="fas fa-feather"></i>
+        </header>
+        <main class="flex-container col col-center intro-banner">
+            <div class="flex-container col">
+                <h1>Hello!<br>What's your name?</h1>
+                <input type="text" name="user_name" placeholder="Your Name" autofocus>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body> -->
 </html>
