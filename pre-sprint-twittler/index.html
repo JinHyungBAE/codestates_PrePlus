@@ -1,178 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Twittler</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-        <script src="data.js"></script>
-    </head>
-    <body class="row">
-        <header class="w-10 sticky-top bg--light">
-            <div class="container col flex-end hidden">
-                <a href="#"><i class="fas fa-feather icon-logo"></i></a>
-            </div>
-        </header>
-        <main class="w-30">
-            <div class="main-title row bg--light bb-1s">
-                <a href="#"><h2 class="ml-10 primary">Twittler</h2></a> 
-                <button class="refresh mr-10"><i class="fas fa-feather lh-13 primary" title="New Tweets"></i></button>
-            </div>
 
-            <div id="newTweetSection" class="row pl-15 pr-15 pt-10 mb-10 bg--light bb-1s">
-                <div class="img-section mr-10">
-                    <div class="profile_image"><i class="fas fa-plus-circle add_icon primary" title="Add Profile Image"></i></div>
-                </div>
-                <div class="text-section col pb-10">
-                    <input type="text" class="pt-15" name="user_name" placeholder="Input your name" autofocus>
-                    <textarea id="newTweetContent" class="pb-10" placeholder="What's happening?" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
-                    <button class="btn-register ml-10 active">Tweet</button>
-                </div>
-            </div>
-            
-            <ul class="bg--light">
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">HEESEUNG</span>
-                            <span class="time">방금</span>
-                        </div>
-                        <p class="content">Hello this is Twittler.</p>
-                    </div>
-                </li>
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">JAKE</span>
-                            <span class="time">2분 전</span>
-                        </div>
-                        <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah 
-                            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
-                            h blah blah blah blah blah blah blah blah </p>
-                    </div>
-                </li>
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">JAY</span>
-                            <span class="time">3시간 전</span>
-                        </div>
-                        <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah 
-                            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
-                            h blah blah blah blah blah blah blah blah </p>
-                    </div>
-                </li>
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">SUNGHOON</span>
-                            <span class="time">2021.1.31</span>
-                        </div>
-                        <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah 
-                            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
-                            h blah blah blah blah blah blah blah blah </p>
-                    </div>
-                </li>
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">SUNOO</span>
-                            <span class="time">2021.1.31</span>
-                        </div>
-                        <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah 
-                            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
-                            h blah blah blah blah blah blah blah blah </p>
-                    </div>
-                </li>
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">JUNGWON</span>
-                            <span class="time">2021.1.31</span>
-                        </div>
-                        <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah 
-                            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
-                            h blah blah blah blah blah blah blah blah </p>
-                    </div>
-                </li>
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">NIKI</span>
-                            <span class="time">2021.1.31</span>
-                        </div>
-                        <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah 
-                            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
-                            h blah blah blah blah blah blah blah blah </p>
-                    </div>
-                </li>
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">HITMAN BANG</span>
-                            <span class="time">2021.1.31</span>
-                        </div>
-                        <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah 
-                            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
-                            h blah blah blah blah blah blah blah blah </p>
-                    </div>
-                </li>
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">ENGENE</span>
-                            <span class="time">2021.1.31</span>
-                        </div>
-                        <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah 
-                            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
-                            h blah blah blah blah blah blah blah blah </p>
-                    </div>
-                </li>
-                <li class="tweet row pl-15 pr-15 pt-10">
-                    <div class="img-section mr-10">
-                        <div class="profile_image"></div>
-                    </div>
-                    <div class="text-section col pb-10">
-                        <div class="row">
-                            <span class="username">ENHYPEN</span>
-                            <span class="time">2021.1.31</span>
-                        </div>
-                        <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah 
-                            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
-                            h blah blah blah blah blah blah blah blah </p>
-                    </div>
-                </li>
-            </ul>
-        </main>
-        <aside class="w-10 sticky-top bg--light"></aside>
-        <script src="script.js"></script>
-    </body>
+<head>
+  <meta charset="utf-8">
+  <title>Twittler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <script src="data.js"></script>
+</head>
+
+<body class="row">
+  <header class="w-10 sticky-top bg--light">
+    <div class="container col flex-end hidden">
+      <a href="#"><i class="fas fa-feather icon-logo"></i></a>
+    </div>
+  </header>
+  <main class="w-30">
+    <div class="main-title row bg--light bb-1s">
+      <a href="#">
+        <h2 class="ml-10 primary">Twittler</h2>
+      </a>
+      <button class="refresh mr-10"><i class="fas fa-feather lh-13 primary" title="New Tweets"></i></button>
+    </div>
+
+    <div id="newTweetSection" class="row pl-15 pr-15 pt-10 mb-10 bg--light bb-1s">
+      <div class="img-section mr-10">
+        <div class="profile_image"><i class="fas fa-plus-circle add_icon primary" title="Add Profile Image"></i></div>
+      </div>
+      <div class="text-section col pb-10">
+        <input id="username" type="text" class="pt-15" name="user_name" placeholder="Input your name" autofocus>
+        <textarea id="newTweetContent" class="pb-10" placeholder="What's happening?" onkeydown="resize(this)"
+          onkeyup="resize(this)"></textarea>
+        <button class="btn-register ml-10" disabled="disabled">Tweet</button>
+      </div>
+    </div>
+
+    <ul id="tweets" class="bg--light">
+      <!-- <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">HEESEUNG</span>
+            <span class="time">방금</span>
+          </div>
+          <p class="content">Hello this is Twittler.</p>
+        </div>
+      </li>
+      <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">JAKE</span>
+            <span class="time">2분 전</span>
+          </div>
+          <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
+            h blah blah blah blah blah blah blah blah </p>
+        </div>
+      </li>
+      <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">JAY</span>
+            <span class="time">3시간 전</span>
+          </div>
+          <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
+            h blah blah blah blah blah blah blah blah </p>
+        </div>
+      </li>
+      <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">SUNGHOON</span>
+            <span class="time">2021.1.31</span>
+          </div>
+          <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
+            h blah blah blah blah blah blah blah blah </p>
+        </div>
+      </li>
+      <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">SUNOO</span>
+            <span class="time">2021.1.31</span>
+          </div>
+          <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
+            h blah blah blah blah blah blah blah blah </p>
+        </div>
+      </li>
+      <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">JUNGWON</span>
+            <span class="time">2021.1.31</span>
+          </div>
+          <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
+            h blah blah blah blah blah blah blah blah </p>
+        </div>
+      </li>
+      <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">NIKI</span>
+            <span class="time">2021.1.31</span>
+          </div>
+          <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
+            h blah blah blah blah blah blah blah blah </p>
+        </div>
+      </li>
+      <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">HITMAN BANG</span>
+            <span class="time">2021.1.31</span>
+          </div>
+          <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
+            h blah blah blah blah blah blah blah blah </p>
+        </div>
+      </li>
+      <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">ENGENE</span>
+            <span class="time">2021.1.31</span>
+          </div>
+          <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
+            h blah blah blah blah blah blah blah blah </p>
+        </div>
+      </li>
+      <li class="tweet row pl-15 pr-15 pt-10">
+        <div class="img-section mr-10">
+          <div class="profile_image"></div>
+        </div>
+        <div class="text-section col pb-10">
+          <div class="row">
+            <span class="username">ENHYPEN</span>
+            <span class="time">2021.1.31</span>
+          </div>
+          <p class="content">Hello this is Twittler. blah blah blah blah blah blah blah blah blah blah blah blah
+            blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bla
+            h blah blah blah blah blah blah blah blah </p>
+        </div>
+      </li> -->
+    </ul>
+  </main>
+  <aside class="w-10 sticky-top bg--light"></aside>
+  <script src="script.js"></script>
+</body>
+
 </html>
