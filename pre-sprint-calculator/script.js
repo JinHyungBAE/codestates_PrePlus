@@ -131,6 +131,8 @@ window.addEventListener('keydown', function (event) {
       display.textContent = display.textContent + '.';
     } else if (previousKey === 'calculate') {
       display.textContent = '0.';
+    } else if (previousKey === 'number') {
+      newDiv.textContent = newDiv.textContent + '.';
     }
 
     previousKey = 'decimal'; // 직전에 누른 키값을 연산자로 바꿔주자
