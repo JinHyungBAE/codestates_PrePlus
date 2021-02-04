@@ -88,6 +88,7 @@ main {
 .main-title > button > i {font-size: 21px; cursor: pointer;}
 
 /* MAIN > #newTweetSection */
+#newTweetSection {position: sticky; top: 53px; z-index: 3; box-shadow: 0 0 10px -9px;}
 .add_icon {
     position: absolute; 
     right: 0; 
