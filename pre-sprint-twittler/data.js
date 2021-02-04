@@ -1,9 +1,12 @@
 var DATA = [
-    { user: 'ingikim', message: 'Welcome to Code States #codestates', created_at: '2019-01-03 12:30:20' },
-    { user: 'satya', message: 'this is test message #pair #programming', created_at: '2019-01-04 18:30:20' },
-    { user: 'sundar', message: 'code now! #work #hard', created_at: '2019-01-05 07:30:20' },
-    { user: 'steve', message: 'Stay hungry, and stay foolish', created_at: '2015-01-03 12:30:20' },
-    { user: 'tim', message: 'education for real world', created_at: '2019-01-04 18:30:20' }
+    { user: 'NIKI', message: '야자타임 시작할까요??', created_at: '2019-01-03 12:30:20' },
+    { user: 'JUNGWON', message: '좋다좋다', created_at: '2019-01-03 12:30:20' },
+    { user: 'SUNOO', message: '음...? 갑자기??', created_at: '2019-01-03 12:30:20' },
+    { user: 'SUNGHOON', message: '그런건 지금하면 재미없어', created_at: '2019-01-04 18:30:20' },
+    { user: 'HEESEUNG', message: '절대 반대!!', created_at: '2019-01-05 07:30:20' },
+    { user: 'JAKE', message: 'ㅋㅋㅋㅋ 재밌을것도 같고', created_at: '2015-01-03 12:30:20' },
+    { user: 'JAY', message: '...', created_at: '2019-01-04 18:30:20' },
+    { user: 'HEESEUNG', message: '라면 먹을사람?', created_at: '2019-01-31 01:30:20' },
 ];
 
 var randomUser = ['ingikim', 'satya', 'sundar', 'steve', 'tim', 'jeff'];
