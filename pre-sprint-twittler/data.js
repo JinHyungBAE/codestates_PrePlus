@@ -1,15 +1,15 @@
 var DATA = [
     { user: 'NIKI', message: '야자타임 시작할까요??', created_at: '2019-01-03 12:30:20' },
-    { user: 'JUNGWON', message: '좋다좋다', created_at: '2019-01-03 12:30:20' },
-    { user: 'SUNOO', message: '음...? 갑자기??', created_at: '2019-01-03 12:30:20' },
-    { user: 'SUNGHOON', message: '그런건 지금하면 재미없어', created_at: '2019-01-04 18:30:20' },
-    { user: 'HEESEUNG', message: '절대 반대!!', created_at: '2019-01-05 07:30:20' },
-    { user: 'JAKE', message: 'ㅋㅋㅋㅋ 재밌을것도 같고', created_at: '2015-01-03 12:30:20' },
-    { user: 'JAY', message: '...', created_at: '2019-01-04 18:30:20' },
-    { user: 'HEESEUNG', message: '라면 먹을사람?', created_at: '2019-01-31 01:30:20' },
+    { user: 'JUNGWON', message: '레쭈고!', created_at: '2019-01-03 12:30:21' },
+    { user: 'SUNOO', message: '음...? 갑자기??', created_at: '2019-01-03 12:33:20' },
+    { user: 'SUNGHOON', message: '그런건 지금하면 재미없어', created_at: '2019-01-03 12:35:20' },
+    { user: 'HEESEUNG', message: '절대 반대!!', created_at: '2019-01-03 12:36:15' },
+    { user: 'JAKE', message: 'ㅋㅋㅋㅋ 재밌을것 같은데?', created_at: '2015-01-03 12:37:01' },
+    { user: 'JAY', message: 'No', created_at: '2019-01-03 18:30:20' },
+    { user: 'HEESEUNG', message: '야식으로 라면 먹을사람???', created_at: '2019-01-31 01:30:20' },
 ];
 
-var randomUser = ['ingikim', 'satya', 'sundar', 'steve', 'tim', 'jeff'];
+var randomUser = ['HEESEUNG', 'JAY', 'JAKE', 'SUNGHOON', 'SUNOO', 'JUNGWON', 'NIKI'];
 var randomMessage = [
     '이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다. 감사원은 원장을 포함한 5인 이상 11인 이하의 감사위원으로 구성한다.',
     '헌법재판소의 조직과 운영 기타 필요한 사항은 법률로 정한다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익한 처우를 받지 아니한다.',
