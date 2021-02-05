@@ -7,20 +7,27 @@
         <link rel="stylesheet" type="text/css" href="intro.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
         <script src="data.js"></script>
-        <script lang="JavaScript">
-            function nextWindow() {
-                location = './index.html';
-            }
-        </script>
     </head>
     <body>
         <div class="container row y-center x-center">
             <div class="row x-center">
                 <button type="button" class="btn-trigger" onclick="window.location = './welcome.html'">
-                    <i class="logo fas fa-feather"></i>
+                    <i class="logo fas fa-feather transition"></i>
                 </button>
                 <i class="logo fas fa-feather shadow"></i>
             </div>
         </div>
+        <!-- <script lang="JavaScript">
+            const buttonFeather = document.querySelector('.btn-trigger');
+            const featherIcon = document.querySelector('.transition');
+            function nextWindow() {
+                location = './welcome.html';
+            }
+            buttonFeather.addEventListener('onclick', function(event){
+                featherIcon.style.fontSize = '50rem';
+                setTimeout(nextWindow(), 3000);
+                console.log('onclick event start')
+            })
+        </script> -->
     </body>
 </html>

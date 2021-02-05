@@ -1,11 +1,70 @@
-// [엘리먼트 변수]
+/* [엘리먼트 변수] */
 const inputNewTweet = document.querySelector('#newTweetSection');
 const btnNewTweet = document.querySelector('.btn-register');
 const userName = document.querySelector('#username');
 const newTweetContent = document.querySelector('#newTweetContent');
 const refresh = document.querySelector('.refresh');
 const readingArea = document.querySelector('#tweets');
+const searchInput = document.querySelector('#search'); // 검색창
+const resultMessage = document.querySelector('.resultMessage'); //검색결과 없을 시 안내 메시지
 
+/* 이벤트 핸들링 */
+// [Tweet 버튼 클릭 이벤트 >> 새로운 트윗 등록]
+btnNewTweet.addEventListener('click', function (event) {
+    makeNewTweetElement(); // 새로운 트윗을 li로 만들어주자
+    userArray.push(DATA[DATA.length-1].user);
+    messageArray.push(DATA[DATA.length-1].message);
+    created_atArray.push(DATA[DATA.length-1].created_at);
+})
+// [유저네임 클릭 이벤트 >> 필터링 함수] ----트윗을 필터링할거에요! 클릭한 트윗 주인의 탐라를 보여주세요!----
+readingArea.addEventListener('click', function (event) {
+    const target = event.target;
+    console.log(target.classList[0]);
+
+    if (target.classList[0] === 'username') {
+        // printTweets을 실행하되, target.textContent가 DATA.user === target.textContent
+        let tweetList = DATA.filter(function (tweet) {
+            return tweet.user === target.textContent;
+        });
+        console.log(tweetList)
+
+        removeTweets();
+        tweetList.forEach(printTweet);
+    }
+});
+// [refresh 버튼 클릭이벤트 핸들링] --------다시 전체 트윗을 보여주세요!!---------
+refresh.addEventListener('click', function (event) {
+    removeTweets();
+    DATA.forEach(printTweet);
+    resultMessage.classList.add('hidden');
+});
+
+// [ASIDE 영역에 있는 검색창에 입력한 값과 일치(일부일치)하는 유저의 트윗만 보여주는 함수]
+// ----------------[검색창으로 필터 구현]----------------------
+searchInput.addEventListener('keyup', function (event) {
+    const target = event.target;
+    console.log(typeof target.value);
+    console.log(event.code);
+
+    if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+        let searchResult = DATA.filter(function (tweet) {
+            let userToUpperCase = tweet.user.toUpperCase();
+            let searchValueToUpperCase = target.value.toUpperCase();
+            return userToUpperCase.includes(searchValueToUpperCase);
+        })
+        if (searchResult.length !== 0) {
+            removeTweets();
+            searchResult.forEach(printTweet);
+            resultMessage.classList.add('hidden');
+        } else {
+            resultMessage.classList.remove('hidden');
+        }
+        target.value = '';
+    }
+});
+
+/* [함수] 모음 */
+// [타임스탬프 포맷 함수]
 // ----작성시간을 입력받아 작성한 시점으로부터 현재시간까지 얼마나 지났는지를 반환해주는 함수입니다.-----------
 function createdTimeToFormatted(time) {
     let now = new Date(); // 현재 날짜 정보를 now 객체로 만듭니다.
@@ -37,14 +96,49 @@ function createdTimeToFormatted(time) {
     }
 }
 
-// ----------------------------------------기존의 트윗을 보여줍니다.----------------------
+// [새로운 트윗 생성 함수]
+// --------------------------새로운 트윗을 생성합니다.------------------------------
+function makeNewTweetElement() {
+    console.log('click')
+    // 새로 입력받은 트윗을 객체로 만들어서 DATA 배열에 추가해주자
+    // 객체 속성은 user, message, created_at
+    // 객체를 새로 만들고
+    // 객체에 속성을 추가하고
+    let newTweet = {};
+    newTweet.user = userName.value;
+    newTweet.message = newTweetContent.value;
+    newTweet.created_at = createdTimeToFormatted();
+    // 그 객체를 DATA에 unshift하자
+    DATA.push(newTweet);
+    // 추가된 트윗을 보여주자
+    printTweet(DATA[DATA.length - 1]);
+    // 입력하는 칸을 비우자
+    userName.value = '';
+    newTweetContent.value = '';
+    // 트윗 버튼을 비활성화시키자
+    btnNewTweet.disabled = 'disabled';
+    btnNewTweet.classList.remove('active');
+}
+
+// [화면의 트윗을 모두 지워주는 함수]
+function removeTweets() {
+    while (readingArea.firstChild) {
+        readingArea.removeChild(readingArea.firstChild);
+    }
+}
+
+// [화면에 DATA의 모든 트윗들을 뿌려주는 함수]
 function printTweets() {
     DATA.forEach(printTweet);
 }
+
+// [화면에 트윗 한개를 프린트하는 함수]
 function printTweet(DATA) {
     let tweetElement = makeTweetElement(DATA);
     readingArea.prepend(tweetElement);
 }
+
+// [DATA 배열 내의 객체의 정보를 받아와 html 엘리먼트로 만들어주는 함수]
 function makeTweetElement(DATA) {
     //tweet li --
     let liElement = document.createElement('li');
@@ -83,67 +177,23 @@ function makeTweetElement(DATA) {
     return liElement;
 }
 
+// [textarea 높이 자동조절 함수]
+function resize(obj) {
+    obj.style.height = '1px';
+    obj.style.height = (12 + obj.scrollHeight) + 'px';
+}
+
 //함수 실행.
 printTweets();
 
-// DATA는 이미 작성된 트윗을 표시합니다.
-console.log(DATA)
-// generateNewTweet을 호출할 때마다 새로운 트윗을 생성합니다.
-console.log(generateNewTweet());
 
-// --------------------------새로운 트윗을 생성합니다.------------------------------
+// TODO:::::: 완성하지 못한 기능들
 
-function makeNewTweetElement() {
-    console.log('click')
-    // 새로 입력받은 트윗을 객체로 만들어서 DATA 배열에 추가해주자
-    // 객체 속성은 user, message, created_at
-    // 객체를 새로 만들고
-    // 객체에 속성을 추가하고
-    let newTweet = {};
-    newTweet.user = userName.value;
-    newTweet.message = newTweetContent.value;
-    newTweet.created_at = new Date();
-    // 그 객체를 DATA에 unshift하자
-    DATA.push(newTweet);
-    // 추가된 트윗을 보여주자
-    printTweet(DATA[DATA.length - 1]);
-    // 입력하는 칸을 비우자
-    userName.value = '';
-    newTweetContent.value = '';
-    // 트윗 버튼을 비활성화시키자
-    btnNewTweet.disabled = 'disabled';
-    btnNewTweet.classList.remove('active');
-}
-// [엘리먼트와 이벤트 핸들러의 연결]
-btnNewTweet.onclick = makeNewTweetElement;
-
-
-// --------------------------트윗을 필터링할거에요! 클릭한 트윗 주인의 탐라를 보여주세요!------------------------
-readingArea.addEventListener('click', function (event) {
+// [검색창 onfocus 이벤트]
+searchInput.addEventListener('onfocus', function (event) {
     const target = event.target;
-    console.log(target.classList[0]);
-
-    if (target.classList[0] === 'username') {
-        // printTweets을 실행하되, target.textContent가 DATA.user === target.textContent
-        let tweetList = DATA.filter(function (tweet) {
-            return tweet.user === target.textContent;
-        });
-        console.log(tweetList)
-
-        //readingArea.innerHTML = '';
-        while (readingArea.firstChild) {
-            readingArea.removeChild(readingArea.firstChild);
-        }
-        tweetList.forEach(printTweet);
-    }
-});
-// -----------------------다시 전체 트윗을 보여주세요!!--------------------------------------------------
-refresh.addEventListener('click', function (event) {
-    while (readingArea.firstChild) {
-        readingArea.removeChild(readingArea.firstChild);
-    }
-    DATA.forEach(printTweet);
-});
+    console.log(target)
+})
 
 // ----------------------------Tweet Button 활성화---------------------
 inputNewTweet.addEventListener('keyup', function (event) {
@@ -156,16 +206,21 @@ inputNewTweet.addEventListener('keyup', function (event) {
     }
 })
 
-// textarea 높이 자동조절
-function resize(obj) {
-    obj.style.height = '1px';
-    obj.style.height = (12 + obj.scrollHeight) + 'px';
-}
+// 안됨... 왜???
+// newTweetContent.addEventListener('keyup', function (event) {
+//     const target = event.target;
+//     target.style.height = '1px';
+//     target.style.height = (12 + obj.scrollHeight) + 'px';
+// })
+
+// [엘리먼트와 이벤트 핸들러의 연결]
+// btnNewTweet.onclick = makeNewTweetElement;
+// 이것도 안됨... 왜???
+// newTweetContent.keydown = resize(target);
+// newTweetContent.keyup = resize(target);
 
 // DATA는 이미 작성된 트윗을 표시합니다.
 console.log(DATA)
 
 // generateNewTweet을 호출할 때마다 새로운 트윗을 생성합니다.
 console.log(generateNewTweet());
-
-document.getElementById('test').innerHTML = 'hello twittler, check developer console!';

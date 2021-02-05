@@ -49,7 +49,7 @@ textarea {resize: none;}
 header {
     left: 0;
     height: 100vh;
-    max-width: 250px;
+    max-width: 350px;
     border-right: 1px solid rgb(235, 238, 240);
     z-index: 3;
 }
@@ -127,7 +127,15 @@ span.time {font-size: 0.75rem; margin-left: 5px; line-height: 2.3; color: #5b708
 
 
 /* ASIDE */
-aside {border-left: 1px solid rgb(235, 238, 240); z-index: 3;}
+aside {max-width: 350px; border-left: 1px solid rgb(235, 238, 240); z-index: 3;}
+.search-box {width: 315px; border-radius: 9999px; background: rgb(235, 238, 240);vertical-align: text-bottom; position: sticky; top: 10px;}
+input#search {padding: 10px;}
+.icon-search {color: rgb(91, 112, 131); fill: rgb(91, 112, 131); min-width: 30px; vertical-align: text-bottom; height: 1.25em;}
+.resultMessage {position: sticky; top: 45px; font-size: 14px; padding: 21px; color: rgb(91, 112, 131);}
+
+/* ASIDE-ONFOCUS */
+.search-box.onfocus {background: #fff; border: 1px solid #1da1f2;}
+.search-box.onfocus > .icon-search {fill: #1da1f2;}
 
 /* SCROLL BAR */
 ::-webkit-scrollbar {display: none;}

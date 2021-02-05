@@ -3,10 +3,10 @@ var DATA = [
     { user: 'JUNGWON', message: '레쭈고!', created_at: '2019-01-03 12:30:21' },
     { user: 'SUNOO', message: '음...? 갑자기??', created_at: '2019-01-03 12:33:20' },
     { user: 'SUNGHOON', message: '그런건 지금하면 재미없어', created_at: '2019-01-03 12:35:20' },
-    { user: 'HEESEUNG', message: '절대 반대!!', created_at: '2019-01-03 12:36:15' },
-    { user: 'JAKE', message: 'ㅋㅋㅋㅋ 재밌을것 같은데?', created_at: '2015-01-03 12:37:01' },
-    { user: 'JAY', message: 'No', created_at: '2019-01-03 18:30:20' },
-    { user: 'HEESEUNG', message: '야식으로 라면 먹을사람???', created_at: '2019-01-31 01:30:20' },
+    { user: 'HEESEUNG', message: '인간이 얼음에 고행을 따뜻한 가장 이것이다. 꽃이 곧 동력은 끝에 동산에는 그것은 거선의 별과 인생의 것이다. 구하지 착목한는 스며들어 인생의 것이다. 새 가슴에 있는 만천하의 있다. 몸이 뜨거운지라, 청춘의 소리다.이것은 같으며, 피다. 설산에서 힘차게 옷을 피다. 놀이 그들의 인간의 주는 소금이라.', created_at: '2019-01-03 12:36:15' },
+    { user: 'JAKE', message: 'omg', created_at: '2021-02-03 12:37:01' },
+    { user: 'JAY', message: '아아아아아 로컬 스토리지 모르겠다아아...', created_at: '2021-02-05 12:30:20' },
+    { user: 'HEESEUNG', message: '야식으로 라면 먹을사람???', created_at: '2021-02-05 16:40:20' },
 ];
 
 var randomUser = ['HEESEUNG', 'JAY', 'JAKE', 'SUNGHOON', 'SUNOO', 'JUNGWON', 'NIKI'];

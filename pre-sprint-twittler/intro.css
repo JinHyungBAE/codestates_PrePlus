@@ -33,3 +33,6 @@ h1 {font-size: 5rem; font-family: 'Montserrat Alternates', sans-serif; font-styl
 .logo {position:absolute; left: 47vw; top: 43vh; font-size: 5rem; color: #fff; z-index: 999; cursor: pointer;}
 .logo.shadow {left:47.5vw; color: #187fc086; z-index: -999; opacity: .5;}
 .logo:hover {font-size: 5.2rem;}
+
+/* ANIMATION */
+.transition {transition: font-size 3s;}
